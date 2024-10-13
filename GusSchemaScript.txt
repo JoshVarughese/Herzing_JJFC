@@ -1,16 +1,16 @@
+USE OrderManagementDB;
+
 CREATE TABLE Customers (
     customerID INT AUTO_INCREMENT PRIMARY KEY,
     customerName VARCHAR(255) NOT NULL,
     partySize INT NOT NULL
 );
-CREATE TABLE PaymentSystem (
-    paymentID INT AUTO_INCREMENT PRIMARY KEY,
-    orderID INT NOT NULL,
-    paymentMethod ENUM('Credit Card', 'Debit Card', 'Cash', 'PayPal') NOT NULL,
-    paymentAmount DECIMAL(10, 2) NOT NULL,
-    paymentStatus ENUM('Completed', 'Pending', 'Failed') NOT NULL,
-    FOREIGN KEY (orderID) REFERENCES OrderManagement(orderID)
+
+CREATE TABLE TableService (
+    tableID INT AUTO_INCREMENT PRIMARY KEY,
+    orderStatus ENUM('Available', 'Occupied', 'Reserved') NOT NULL
 );
+
 CREATE TABLE OrderManagement (
     orderID INT AUTO_INCREMENT PRIMARY KEY,
     tableID INT NOT NULL,
@@ -19,14 +19,16 @@ CREATE TABLE OrderManagement (
     orderStatus ENUM('Pending', 'In Progress', 'Completed', 'Cancelled') NOT NULL,
     FOREIGN KEY (tableID) REFERENCES TableService(tableID)
 );
-CREATE TABLE TableService (
-    tableID INT AUTO_INCREMENT PRIMARY KEY,
-    orderStatus ENUM('Available', 'Occupied', 'Reserved') NOT NULL
+
+CREATE TABLE PaymentSystem (
+    paymentID INT AUTO_INCREMENT PRIMARY KEY,
+    orderID INT NOT NULL,
+    paymentMethod ENUM('Credit Card', 'Debit Card', 'Cash', 'PayPal') NOT NULL,
+    paymentAmount DECIMAL(10, 2) NOT NULL,
+    paymentStatus ENUM('Completed', 'Pending', 'Failed') NOT NULL,
+    FOREIGN KEY (orderID) REFERENCES OrderManagement(orderID)
 );
-CREATE TABLE TableService (
-    tableID INT AUTO_INCREMENT PRIMARY KEY,
-    orderStatus ENUM('Available', 'Occupied', 'Reserved') NOT NULL
-);
+
 CREATE TABLE Staff (
     staffID INT AUTO_INCREMENT PRIMARY KEY,
     staffRole ENUM('Server', 'Chef', 'Manager', 'Cleaner') NOT NULL,
