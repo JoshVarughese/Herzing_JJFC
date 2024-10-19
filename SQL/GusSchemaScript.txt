@@ -1,0 +1,64 @@
+USE OrderManagementDB;
+
+CREATE TABLE Customers (
+    customerID INT AUTO_INCREMENT PRIMARY KEY,
+    customerName VARCHAR(255) NOT NULL,
+    partySize INT NOT NULL
+);
+
+CREATE TABLE TableService (
+    tableID INT AUTO_INCREMENT PRIMARY KEY,
+    orderStatus ENUM('Available', 'Occupied', 'Reserved') NOT NULL
+);
+
+CREATE TABLE OrderManagement (
+    orderID INT AUTO_INCREMENT PRIMARY KEY,
+    tableID INT NOT NULL,
+    orderTime DATETIME NOT NULL,
+    orderItems TEXT NOT NULL,  -- Assuming a list of items as a text field
+    orderStatus ENUM('Pending', 'In Progress', 'Completed', 'Cancelled') NOT NULL,
+    FOREIGN KEY (tableID) REFERENCES TableService(tableID)
+);
+
+CREATE TABLE PaymentSystem (
+    paymentID INT AUTO_INCREMENT PRIMARY KEY,
+    orderID INT NOT NULL,
+    paymentMethod ENUM('Credit Card', 'Debit Card', 'Cash', 'PayPal') NOT NULL,
+    paymentAmount DECIMAL(10, 2) NOT NULL,
+    paymentStatus ENUM('Completed', 'Pending', 'Failed') NOT NULL,
+    FOREIGN KEY (orderID) REFERENCES OrderManagement(orderID)
+);
+
+CREATE TABLE Staff (
+    staffID INT AUTO_INCREMENT PRIMARY KEY,
+    staffRole ENUM('Server', 'Chef', 'Manager', 'Cleaner') NOT NULL,
+    shiftSchedule VARCHAR(255) NOT NULL
+);
+CREATE TABLE CleaningFunctionality (
+    cleaningStatus ENUM('Clean', 'Needs Cleaning', 'In Progress') NOT NULL,
+    tableID INT NOT NULL,
+    FOREIGN KEY (tableID) REFERENCES TableService(tableID)
+);
+CREATE TABLE InventoryManagement (
+    foodItemID INT AUTO_INCREMENT PRIMARY KEY,
+    ingredientStock INT NOT NULL,
+    stockAlerts ENUM('Low', 'Medium', 'High') NOT NULL
+);
+CREATE TABLE SeatingSystem (
+    tableID INT AUTO_INCREMENT PRIMARY KEY,
+    capacity INT NOT NULL,
+    cleaningStatus ENUM('Clean', 'Dirty', 'In Progress') NOT NULL
+);
+CREATE TABLE ReservationSystem (
+    reservationID INT AUTO_INCREMENT PRIMARY KEY,
+    customerName VARCHAR(255) NOT NULL,
+    contactInfo VARCHAR(255) NOT NULL,
+    reservationDateTime DATETIME NOT NULL,
+    numberOfGuests INT NOT NULL,
+    tableID INT NOT NULL,
+    FOREIGN KEY (tableID) REFERENCES TableService(tableID)
+);
+CREATE TABLE WalkInQueue (
+    walkInQueueID INT AUTO_INCREMENT PRIMARY KEY,
+    priorityLevel ENUM('High', 'Medium', 'Low') NOT NULL
+);
