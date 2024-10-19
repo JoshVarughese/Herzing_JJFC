@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="center" prefHeight="430.0" prefWidth="800.0" spacing="20" style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jjfc.superturboservice.controllers.LandingPageController">
+    <Label style="-fx-font-family: 'Arial Black'; -fx-font-size: 28; -fx-text-fill: #3d3a83;" text="JJFC Super Turbo Service" />
+
+    <HBox alignment="center" spacing="15">
+        <Button fx:id="tableServiceButton" text="Table Service" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
+        <Button fx:id="foodManagementButton" text="Food Management" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
+        <Button fx:id="frontServiceButton" text="Front Service" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
+    </HBox>
+</VBox>
