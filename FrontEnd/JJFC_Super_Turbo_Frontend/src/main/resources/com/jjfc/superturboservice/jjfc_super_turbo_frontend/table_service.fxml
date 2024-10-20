@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefWidth="800.0" spacing="20" style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jjfc.superturboservice.controllers.TableServiceController">
+    <Label style="-fx-font-family: 'Arial Black'; -fx-font-size: 28; -fx-text-fill: #3d3a83;" text="Table Service Management" />
+
+    <TextField fx:id="orderStatusField" promptText="Order Status (Available, Occupied, Reserved)" style="-fx-font-size: 16px; -fx-pref-width: 300;" />
+
+    <Button onAction="#createTable" text="Add Table" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
+
+    <ListView fx:id="tableList" prefHeight="200" style="-fx-font-size: 16px;" />
+
+    <HBox alignment="center" spacing="10">
+        <Button onAction="#loadTables" text="Refresh List" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
+        <Button onAction="#deleteTable" text="Delete Selected Table" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
+        <Button onAction="#updateTable" text="Update Selected Table" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
+    </HBox>
+</VBox>

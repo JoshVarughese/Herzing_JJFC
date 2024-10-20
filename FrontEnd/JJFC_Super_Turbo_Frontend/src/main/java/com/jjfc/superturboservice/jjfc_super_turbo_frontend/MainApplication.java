@@ -11,7 +11,7 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            // Load the landing page FXML file
+            // Loads the landing page FXML file
             Parent root = FXMLLoader.load(getClass().getResource("/com/jjfc/superturboservice/jjfc_super_turbo_frontend/landing_page.fxml"));
             primaryStage.setTitle("JJFC Super Turbo Service");
             primaryStage.setScene(new Scene(root, 800, 600));
