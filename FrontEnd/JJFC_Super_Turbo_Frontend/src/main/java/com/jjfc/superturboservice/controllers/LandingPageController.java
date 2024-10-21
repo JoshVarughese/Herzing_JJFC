@@ -30,7 +30,7 @@ public class LandingPageController {
     }
 
     private void openFoodManagement() {
-        loadNewScene("/com/jjfc/superturboservice/jjfc_super_turbo_frontend/food_management.fxml", "Food Management");
+        loadNewScene("/com/jjfc/superturboservice/jjfc_super_turbo_frontend/inventory_service.fxml", "Food Management (Inventory Management)");
     }
 
     private void openFrontService() {

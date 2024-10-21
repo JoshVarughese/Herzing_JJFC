@@ -8,7 +8,7 @@
 
     <HBox alignment="center" spacing="15">
         <Button fx:id="tableServiceButton" text="Table Service" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
-        <Button fx:id="foodManagementButton" text="Food Management" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
+        <Button fx:id="foodManagementButton" text="Food Management (Inventory)" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
         <Button fx:id="frontServiceButton" text="Front Service" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
     </HBox>
 </VBox>

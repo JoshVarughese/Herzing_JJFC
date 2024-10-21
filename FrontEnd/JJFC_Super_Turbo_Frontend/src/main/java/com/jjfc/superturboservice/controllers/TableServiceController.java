@@ -94,7 +94,6 @@ public class TableServiceController {
             return;
         }
 
-        // Extracts the table ID from the selected item
         Integer tableID = Integer.parseInt(selectedItem.split(":")[1].split("\\(")[0].trim());
         String newOrderStatus = orderStatusField.getText();
 
