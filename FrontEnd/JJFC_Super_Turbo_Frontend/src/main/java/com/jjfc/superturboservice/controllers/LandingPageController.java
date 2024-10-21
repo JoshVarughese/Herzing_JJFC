@@ -34,7 +34,7 @@ public class LandingPageController {
     }
 
     private void openFrontService() {
-        loadNewScene("/com/jjfc/superturboservice/jjfc_super_turbo_frontend/front_service.fxml", "Front Service");
+        loadNewScene("/com/jjfc/superturboservice/jjfc_super_turbo_frontend/order_management.fxml", "Front Service (Order Management)");
     }
 
     private void loadNewScene(String fxmlPath, String title) {

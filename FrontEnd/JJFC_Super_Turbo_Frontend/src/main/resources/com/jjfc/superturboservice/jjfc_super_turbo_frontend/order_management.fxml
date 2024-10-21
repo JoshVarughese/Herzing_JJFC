@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefWidth="800.0" spacing="20" style="-fx-background-color: #F5F5F5;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jjfc.superturboservice.controllers.OrderManagementController">
+    <Label style="-fx-font-family: 'Arial Black'; -fx-font-size: 28; -fx-text-fill: #3d3a83;" text="Order Management" />
+
+    <VBox spacing="10" style="-fx-pref-width: 300;">
+        <HBox spacing="10">
+            <Label text="Table ID:" />
+            <TextField fx:id="tableIDField" promptText="Enter Table ID" style="-fx-font-size: 16px;" />
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Order Time:" />
+            <TextField fx:id="orderTimeField" promptText="Enter Order Time" style="-fx-font-size: 16px;" />
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Order Items:" />
+            <TextField fx:id="orderItemsField" promptText="Enter Order Items" style="-fx-font-size: 16px;" />
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Order Status:" />
+            <ComboBox fx:id="orderStatusComboBox" style="-fx-font-size: 16px;" />
+        </HBox>
+    </VBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Add Order" onAction="#createOrder" style="-fx-background-color: #00509E; -fx-text-fill: white; -fx-font-size: 16px;" />
+        <Button text="Update Order" onAction="#updateOrder" style="-fx-background-color: #00509E; -fx-text-fill: white; -fx-font-size: 16px;" />
+        <Button text="Delete Order" onAction="#deleteOrder" style="-fx-background-color: #00509E; -fx-text-fill: white; -fx-font-size: 16px;" />
+    </HBox>
+
+    <ListView fx:id="ordersListView" prefWidth="800.0" prefHeight="200.0" style="-fx-font-size: 16px;" />
+
+
+</VBox>
