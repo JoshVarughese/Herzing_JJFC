@@ -1,7 +1,7 @@
 package com.jjfc.jjfc_super_turbo_service.model;
 
 import jakarta.persistence.*;
-
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
 
 @Entity
@@ -14,15 +14,17 @@ public class OrderManagement {
     @Column(nullable = false)
     private Integer tableID;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(nullable = false)
     private Date orderTime;
 
     @Column(nullable = false)
-    private String orderItems; // Assuming a list of items as a text field
+    private String orderItems;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private OrderStatus orderStatus;
+
 
     // Getters and setters
     public Integer getOrderID() {
