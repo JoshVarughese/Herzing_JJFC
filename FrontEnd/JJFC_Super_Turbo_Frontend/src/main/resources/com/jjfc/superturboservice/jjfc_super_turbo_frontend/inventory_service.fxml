@@ -21,5 +21,6 @@
         <Button onAction="#loadInventory" text="Refresh List" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
         <Button onAction="#updateInventory" text="Update Inventory Item" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
         <Button onAction="#deleteInventory" text="Delete Inventory Item" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
+        <Button onAction="#goBackToHome" text="Back To Home" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
     </HBox>
 </VBox>

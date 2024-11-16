@@ -8,13 +8,14 @@
 
     <TextField fx:id="orderStatusField" promptText="Order Status (Available, Occupied, Reserved)" style="-fx-font-size: 16px; -fx-pref-width: 300;" />
 
-    <Button onAction="#createTable" text="Add Table" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
+    <Button onAction="#createTable" style="-fx-background-color: #00509E; -fx-text-fill: white;" text="Add Table" />
 
     <ListView fx:id="tableList" prefHeight="200" style="-fx-font-size: 16px;" />
 
     <HBox alignment="center" spacing="10">
-        <Button onAction="#loadTables" text="Refresh List" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
-        <Button onAction="#deleteTable" text="Delete Selected Table" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
-        <Button onAction="#updateTable" text="Update Selected Table" style="-fx-background-color: #00509E; -fx-text-fill: white;" />
+        <Button onAction="#loadTables" style="-fx-background-color: #00509E; -fx-text-fill: white;" text="Refresh List" />
+        <Button onAction="#deleteTable" style="-fx-background-color: #00509E; -fx-text-fill: white;" text="Delete Selected Table" />
+        <Button onAction="#updateTable" style="-fx-background-color: #00509E; -fx-text-fill: white;" text="Update Selected Table" />
+        <Button onAction="#goBackToHome" prefHeight="25.0" prefWidth="99.0" style="-fx-background-color: #00509E; -fx-text-fill: white;" text="Back To Home" />
     </HBox>
 </VBox>

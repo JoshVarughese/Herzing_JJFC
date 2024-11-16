@@ -1,16 +1,24 @@
 package com.jjfc.superturboservice.controllers;
 
 import com.jjfc.superturboservice.models.Table;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
+
+import java.io.IOException;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.URI;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.core.type.TypeReference;
+import javafx.stage.Stage;
 
 import java.util.List;
 
@@ -152,6 +160,22 @@ public class TableServiceController {
             }
         } catch (Exception e) {
             showAlert("Error deleting table", e.getMessage());
+        }
+    }
+
+    @FXML
+    private void goBackToHome(ActionEvent event) {
+        try {
+            // Load the landing page
+            Parent homePage = FXMLLoader.load(getClass().getResource("/com/jjfc/superturboservice/jjfc_super_turbo_frontend/landing_page.fxml"));
+            Scene homeScene = new Scene(homePage);
+
+            // Get current stage and set the new scene
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(homeScene);
+            stage.show();
+        } catch (IOException e) {
+            showAlert("Error", "Failed to load the landing page.");
         }
     }
 

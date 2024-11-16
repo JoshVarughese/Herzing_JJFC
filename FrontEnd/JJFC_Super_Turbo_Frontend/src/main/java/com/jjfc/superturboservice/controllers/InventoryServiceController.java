@@ -6,6 +6,13 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Alert;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.Node;
+import javafx.stage.Stage;
+import javafx.event.ActionEvent;
+import java.io.IOException;
+import javafx.fxml.FXMLLoader;
 
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -162,6 +169,23 @@ public class InventoryServiceController {
             showAlert("Error deleting inventory item", e.getMessage());
         }
     }
+
+    @FXML
+    private void goBackToHome(ActionEvent event) {
+        try {
+            // Load the landing page
+            Parent homePage = FXMLLoader.load(getClass().getResource("/com/jjfc/superturboservice/jjfc_super_turbo_frontend/landing_page.fxml"));
+            Scene homeScene = new Scene(homePage);
+
+            // Get current stage and set the new scene
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(homeScene);
+            stage.show();
+        } catch (IOException e) {
+            showAlert("Error", "Failed to load the landing page.");
+        }
+    }
+
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
